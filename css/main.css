@@ -243,108 +243,62 @@ section .about-self .left .social a {
 
 /* End about_me.css */
 
-/*Main VISUAL*/
-.visual {
+/*Main project_1*/
+.project_1 {
     margin-top: 0px;
     background:
         linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
         url("../images/appstore.png") center center;
     background-position: center;
 }
-.visual .inner {
+.project_1 .inner {
     height: 646px;
 }
-.visual .title {
+.project_1 .title {
     position: absolute;
     top: 88px;
     left: -10px;
 }
-.visual .title .btn {
+.project_1 .title .btn {
     position: absolute;
     top: 400px;
     left: 160px;
 }
-.visual .swift1.image {
+.project_1 .swift1.image {
     position: absolute;
     bottom: 0;
     right: -47px;
 }
-.visual .swift1.text {
+.project_1 .swift1.text {
     position: absolute;
     top: 38px;
     right: 171px;
 }
-.visual .swift2.image {
+.project_1 .swift2.image {
     position: absolute;
     bottom: 0;
     right: 162px;
 }
-.visual .swift2.text {
+.project_1 .swift2.text {
     position: absolute;
     top: 321px;
     right: 416px;
 }
-.visual .swift-logo {
+.project_1 .swift-logo {
     position: absolute;
     bottom: 0;
     left: 275px;
 }
-.visual .fade-in {
+.project_1 .fade-in {
     opacity: 0;
 }
 
-/*project 1*/
-.find-store {
-    background-image: url("../images/find_store_bg.jpg");
-}
-.find-store .inner {
-    height: 400px;
-}
-.find-store .texture1 {
-    position: absolute;
-    top: 0;
-    left: 400px;
-}
-.find-store .texture2 {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-.find-store .picture {
-    border-radius: 50%;
-    box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.5);
-    position: absolute;
-}
-.find-store .picture1 {
-    top: -60px;
-    left: 0;
-}
-.find-store .picture2 {
-    top: 150px;
-    left: 250px;
-}
-.find-store .text-group {
-    position: absolute;
-    top: 100px;
-    left: 550px;
-}
-.find-store .text-group .title {
-    margin-bottom: 20px;
-}
-.find-store .text-group .description {
-    margin-bottom: 20px;
-}
 /* End project 1*/
 
 /*Project 2 */
 .project_2 {
     width: 100%;
-    background: linear-gradient(
-            to top left,
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2)
-        ),
-        linear-gradient(to top left, rgba(83, 130, 161, 0), #daebfe);
+    background: #2774ae;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -358,7 +312,7 @@ section .about-self .left .social a {
 }
 /* 백그라운드 크기 */
 .project_2 .inner {
-    height: 600px;
+    height: 700px;
 }
 /* 뒷쪽 이미지 */
 .project_2 .floating3 {
@@ -367,11 +321,11 @@ section .about-self .left .social a {
     top: -25px;
     margin-left: 240px; /* 왼쪽으로 이동할 픽셀 수를 지정합니다 */
 }
-/* 메인 폰트 */
+/* 메인 Title 폰트 */
 .project_2 .text-group {
     position: absolute;
     top: 500px;
-    right: -10px;
+    right: -50px;
 }
 .project_2 .text-group .title {
     font-size: 40px;
@@ -385,6 +339,7 @@ section .about-self .left .social a {
     text-align: center;
     gap: 10px; /* 버튼들 사이의 간격을 조절할 수 있습니다 */
 }
+
 .project_2 .text-group .btn {
     display: flex;
     justify-content: center; /* 아이템들을 중앙에 정렬합니다 */
@@ -402,7 +357,7 @@ section .about-self .left .social a {
 .project_2 .text-group .description {
     font-size: 19px;
     text-align: center;
-    color: #003b5c;
+    color: #ffb81c;
     font-weight: bold;
     margin-bottom: 15px;
 }
@@ -413,14 +368,9 @@ section .about-self .left .social a {
     color: black;
     height: 1200px;
     margin-top: 100px;
-    margin-bottom: 20px;
+    /* margin-bottom: 10px; */
     position: flex;
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.05) /*위*/,
-            rgba(0, 0, 0, 0.2) /*아래*/
-        ),
-        center center;
+    background: #8bb8e8;
 }
 .project_2 .project2-carousel .project2-title {
     position: relative;
@@ -549,18 +499,7 @@ section .about-self .left .social a {
 /*Project 3 */
 .project_3 {
     width: 100%;
-    background:
-        linear-gradient(
-            to bottom right,
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.2)
-        ),
-        linear-gradient(
-            to bottom right,
-            rgba(83, 130, 161, 0),
-            rgba(83, 130, 161, 1)
-        ),
-        url("../images/project3_bg.png") center center;
+    background: #2774ae;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -615,7 +554,7 @@ section .about-self .left .social a {
 .project_3 .text-group .description {
     font-size: 19px;
     text-align: center;
-    color: #003b5c;
+    color: #ffd100;
     font-weight: bold;
     margin-bottom: 15px;
 }
@@ -634,28 +573,25 @@ section .about-self .left .social a {
     margin-top: 100px;
     margin-bottom: 20px;
     position: flex;
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.05) /*위*/,
-            rgba(0, 0, 0, 0.2) /*아래*/
-        ),
-        center center;
+    background: #8bb8e8;
 }
 .project_3 .project3-carousel .project3-title {
     position: relative;
     margin-bottom: 5px;
 }
 
-/*캐러셀 Description*/
+/*캐러셀 Description 타이틀 */
 .project_3 .project3-carousel .project3-title h2 {
     padding-top: 20px;
     display: flex;
+    color: black;
     margin-left: 50px;
     margin-right: 50px;
     font-size: 40px;
     font-weight: bold; /* Make h3 text bold */
     justify-content: space-between;
 }
+/* Description 내용 */
 .project_3 .project3-carousel .project3-title p {
     margin-left: 70px;
     font-size: 25px;
@@ -672,6 +608,7 @@ section .about-self .left .social a {
     justify-content: center;
     height: 50px;
 }
+
 /*Project 3 아래 전체 박스 안에 슬라이드 박스 */
 .project_3 .project3-carousel .swiper-container {
     /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
@@ -731,7 +668,7 @@ section .about-self .left .social a {
     width: 50px;
     height: 50px;
     outline: none;
-    border: 2px solid #003b5c;
+    border: 2px solid #2774ae;
     border-radius: 50%;
     position: absolute;
     /* top: 750px; */
@@ -742,21 +679,23 @@ section .about-self .left .social a {
     align-items: center;
     transition: 0.4s;
 }
+/* <- 방향키 */
 .project_3 .project3-carousel .swiper-prev {
-    color: #003b5c;
+    color: #2774ae;
     left: 50%;
     margin-top: -450px;
     margin-left: -570px;
 }
+/* -> 방향키 */
 .project_3 .project3-carousel .swiper-next {
-    color: #003b5c;
+    color: #2774ae;
     right: 50%;
     margin-top: -450px;
     margin-right: -570px;
 }
 .project_3 .project3-carousel .swiper-prev:hover,
 .project_3 .project3-carousel .swiper-next:hover {
-    background-color: #8bb8e8;
+    background-color: #2774ae;
     color: #003b5c;
 }
 /*End Project 3 - carousel 3*/
@@ -764,6 +703,9 @@ section .about-self .left .social a {
 
 /*NOTICE*/
 /*About Me LINE*/
+.notice {
+    background-color: #005587;
+}
 .notice .notice-line {
     position: relative;
 }
