@@ -244,6 +244,53 @@ new Swiper(".personal-carousel .swiper-container", {
 // 캐러셀 끝
 
 /**
+ * Project 1 슬라이드 토글
+ */
+// 슬라이드 영역 요소 검색!
+const project1El = document.querySelector(".project1-carousel");
+// 슬라이드 영역를 토글하는 버튼을 클릭하면 위를 열거나 닫는다!
+const project1ToggleBtn = document.querySelector(".toggle-project_1");
+// 슬라이드 영역 숨김 여부 기본값! 숨김설정 true , 보이고 싶으면 FALSE
+let project1HideCarousel = false;
+// 아이콘 요소 검색!
+const project1Icon = document.getElementById("project1-carousel-icon");
+// close 아이콘
+const project1CloseIcon = document.getElementById("project1-close-icon-1");
+
+// 초기 설정: .project1-carousel을 숨김 상태로 설정
+// project1El.classList.add('hide');
+
+// 토글 버튼을 클릭하면 함수 동작
+project1ToggleBtn.addEventListener("click", function () {
+    // 슬라이드 영역 숨김 여부를 반댓값으로 할당!
+    project1HideCarousel = !project1HideCarousel;
+    // 요소를 숨겨야 하면,
+    if (project1HideCarousel) {
+        project1El.classList.add("hide"); // 숨김
+    } else {
+        project1El.classList.remove("hide"); // 요소가 보여야 하면,
+    }
+    // 아이콘을 토글!
+    if (project1Icon.innerText === "upload") {
+        project1Icon.innerText = "download";
+    } else {
+        project1Icon.innerText = "upload";
+    }
+});
+
+// close 아이콘을 클릭하면 함수 동작
+if (project1CloseIcon) {
+    project1CloseIcon.addEventListener("click", function () {
+        // 슬라이드 영역 숨김 여부를 true로 설정
+        project1HideCarousel = true;
+        project1El.classList.add("hide"); // 숨김
+        // 아이콘을 download로 설정
+        project1Icon.innerText = "download";
+    });
+}
+// End Project 1 슬라이드 토글
+
+/**
  * Project 2 슬라이드 토글
  */
 // 슬라이드 영역 요소 검색!

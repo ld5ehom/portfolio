@@ -138,12 +138,12 @@ header.active button {
     background-color: transparent;
     color: #333;
 }
-.btn.btn--swift {
+.btn.btn--project1 {
     color: #ff5722;
     border-color: #ff5722;
     transition: transform 0.3s ease-in-out;
 }
-.btn.btn--swift:hover {
+.btn.btn--project1:hover {
     color: #ffb81c;
     border-color: #ffb81c;
     background-color: transparent;

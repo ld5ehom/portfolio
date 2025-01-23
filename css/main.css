@@ -98,7 +98,7 @@ section {
 }
 /* 배경 2 색깔  */
 section:nth-child(2n) {
-    background-color: #005587;
+    background-color: #2774ae;
 }
 section .title {
     margin-bottom: 3rem;
@@ -243,57 +243,219 @@ section .about-self .left .social a {
 
 /* End about_me.css */
 
-/*Main project_1*/
+/* Main project_1*/
+/* Project 1 */
 .project_1 {
-    margin-top: 0px;
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
-        url("../images/appstore.png") center center;
-    background-position: center;
+    width: 100%;
+    background: #2774ae;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 세로 방향으로 위에서 시작 */
 }
 .project_1 .inner {
-    height: 646px;
+    height: 900px;
 }
-.project_1 .title {
+/* Main image */
+.project_1 .logo {
     position: absolute;
-    top: 88px;
-    left: -10px;
+    width: 800px;
+    height: 570px;
+    margin-top: 0px;
+    margin-left: -200px; /* 왼쪽으로 이동할 픽셀 수를 지정합니다 */
+    z-index: 1;
 }
-.project_1 .title .btn {
+.project_1 .product {
     position: absolute;
-    top: 400px;
-    left: 160px;
+    width: 680px;
+    height: 520px;
+    margin-top: 150px;
+    right: 0;
+    z-index: 0;
 }
-.project_1 .swift1.image {
+.project_1 .text-group {
     position: absolute;
-    bottom: 0;
-    right: -47px;
+    top: 680px;
+    left: -20px;
+    z-index: 2;
 }
-.project_1 .swift1.text {
-    position: absolute;
-    top: 38px;
-    right: 171px;
-}
-.project_1 .swift2.image {
-    position: absolute;
-    bottom: 0;
-    right: 162px;
-}
-.project_1 .swift2.text {
-    position: absolute;
-    top: 321px;
-    right: 416px;
-}
-.project_1 .swift-logo {
-    position: absolute;
-    bottom: 0;
-    left: 275px;
-}
-.project_1 .fade-in {
-    opacity: 0;
+.project_1 .text-group .title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-/* End project 1*/
+.project_1 .text-group .description {
+    font-size: 25px;
+    text-align: center;
+    color: #ffd100;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.project_1 .text-group .btn {
+    display: flex;
+    justify-content: center; /* 아이템들을 중앙에 정렬합니다 */
+    gap: 10px; /* 아이콘 사이의 간격을 조절할 수 있습니다 */
+    align-items: center;
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 상속받음 */
+}
+.project_1 .text-group .btn:hover {
+    color: #ffb81c;
+}
+.project_1 .text-group .more {
+    /*버튼*/
+    display: flex;
+    position: absolute;
+    left: 100px;
+    gap: 10px; /* 버튼들 사이의 간격을 조절할 수 있습니다 */
+}
+
+.project_1 .text-group .material-icons {
+    margin-left: 5px; /* 아이콘과 텍스트 사이의 간격을 조절할 수 있습니다 */
+}
+
+/*Project 1 - carousel 1*/
+/*Project 1 아래 전체 박스 */
+.project_1 .project1-carousel {
+    height: 1600px;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    justify-items: center;
+    position: flex;
+    background: #8bb8e8;
+}
+
+.project_1 .project1-carousel .project1-title {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/*캐러셀 Description 타이틀 */
+.project_1 .project1-carousel .project1-title h2 {
+    padding-top: 40px;
+    display: flex;
+    color: black;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 40px;
+    font-weight: bold; /* Make h3 text bold */
+    justify-content: space-between;
+}
+/* Description 내용 */
+.project_1 .project1-carousel .project1-title p {
+    margin-left: 70px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: black;
+    font-weight: bold; /* Make h3 text bold */
+}
+.project_1 .project1-carousel .btn {
+    color: black;
+    border-color: black;
+    width: 120px;
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+/*Project 1 아래 전체 박스 안에 슬라이드 박스 */
+.project_1 .project1-carousel .swiper-container {
+    /* 819px 슬라이드 3개와 그 사이 여백 10px씩 = 2477px */
+    width: calc(1000px * 3 + 20px);
+    height: 800px; /*500*/
+    top: 10px;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    margin-left: calc((1000px * 3 + 20px) / -2); /*가운데 맞춤 */
+}
+.project_1 .project1-carousel .swiper-slide img {
+    width: 1000px;
+    height: 700px;
+}
+.project_1 .project1-carousel .swiper-slide {
+    /*슬라이드 이미지 반투명하게 */
+    position: relative;
+    opacity: 0.2;
+    transition: opacity 1s;
+}
+.project_1 .project1-carousel .swiper-slide-active {
+    /* 가운데 슬라이드 이미지 */
+    opacity: 1;
+}
+
+.project_1 .project1-carousel .swiper-pagination {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+.project_1 .project1-carousel .swiper-pagination .swiper-pagination-bullet {
+    background-color: transparent;
+    background-image: url("../images/slide_pager.png");
+    width: 13px;
+    height: 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    outline: none;
+}
+.project_1
+    .project1-carousel
+    .swiper-pagination
+    .swiper-pagination-bullet:last-child {
+    margin-right: 0;
+}
+.project_1
+    .project1-carousel
+    .swiper-pagination
+    .swiper-pagination-bullet-active {
+    background-image: url("../images/slide_pager_on.png");
+}
+
+/*좌우이동키*/
+.project_1 .project1-carousel .swiper-prev,
+.project_1 .project1-carousel .swiper-next {
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: 2px solid #2774ae;
+    border-radius: 50%;
+    position: absolute;
+    /* top: 750px; */
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+/* <- 방향키 */
+.project_1 .project1-carousel .swiper-prev {
+    color: #2774ae;
+    left: 50%;
+    margin-top: -450px;
+    margin-left: -570px;
+}
+/* -> 방향키 */
+.project_1 .project1-carousel .swiper-next {
+    color: #2774ae;
+    right: 50%;
+    margin-top: -450px;
+    margin-right: -570px;
+}
+.project_1 .project1-carousel .swiper-prev:hover,
+.project_1 .project1-carousel .swiper-next:hover {
+    background-color: #2774ae;
+}
+/*End project 1  portfolio carousel*/
+/*End project 1  */
 
 /*Project 2 */
 .project_2 {
@@ -304,40 +466,50 @@ section .about-self .left .social a {
     justify-content: center;
 }
 
-/* Main image */
-.project_2 .product {
-    width: 650px;
-    margin-top: -50px;
-    margin-left: -200px; /* 왼쪽으로 이동할 픽셀 수를 지정합니다 */
-}
 /* 백그라운드 크기 */
 .project_2 .inner {
-    height: 700px;
+    height: 900px;
+}
+/* Main image */
+.project_2 .product {
+    width: 740px;
+    height: 650px;
+    margin-top: -50px;
+    margin-left: -200px; /* 왼쪽으로 이동할 픽셀 수를 지정합니다 */
 }
 /* 뒷쪽 이미지 */
 .project_2 .floating3 {
     position: absolute;
-    width: 500px;
-    top: -25px;
-    margin-left: 240px; /* 왼쪽으로 이동할 픽셀 수를 지정합니다 */
+    width: 700px;
+    height: 570px;
+    top: -100px;
+    margin-left: 440px; /* 왼쪽으로 이동할 픽셀 수를 지정합니다 */
 }
 /* 메인 Title 폰트 */
 .project_2 .text-group {
     position: absolute;
-    top: 500px;
-    right: -50px;
+    top: 700px;
+    right: -100px;
 }
 .project_2 .text-group .title {
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
+.project_2 .text-group .description {
+    font-size: 25px;
+    text-align: center;
+    color: #ffb81c;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
 .project_2 .text-group .more {
     display: flex;
     position: absolute;
     right: 40px;
     text-align: center;
-    gap: 10px; /* 버튼들 사이의 간격을 조절할 수 있습니다 */
+    gap: 15px; /* 버튼들 사이의 간격을 조절할 수 있습니다 */
 }
 
 .project_2 .text-group .btn {
@@ -354,19 +526,12 @@ section .about-self .left .social a {
 .project_2 .text-group .material-icons {
     margin-left: 5px; /* 아이콘과 텍스트 사이의 간격을 조절할 수 있습니다 */
 }
-.project_2 .text-group .description {
-    font-size: 19px;
-    text-align: center;
-    color: #ffb81c;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
 
 /*Project 2 - portfolio carousel */
 /*Project 2 아래 전체 박스 */
 .project_2 .project2-carousel {
     color: black;
-    height: 1200px;
+    height: 1300px;
     margin-top: 100px;
     /* margin-bottom: 10px; */
     position: flex;
@@ -506,26 +671,43 @@ section .about-self .left .social a {
     align-items: flex-start; /* 세로 방향으로 위에서 시작 */
 }
 .project_3 .inner {
-    height: 450px;
+    height: 900px;
 }
 .project_3 .logo {
     position: absolute;
     width: 800px;
-    height: 470px;
+    height: 570px;
     margin-top: -70px;
     margin-left: -200px; /* 왼쪽으로 이동할 픽셀 수를 지정합니다 */
     z-index: 1;
 }
+.project_3 .product {
+    position: absolute;
+    width: 700px;
+    height: 570px;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
 .project_3 .text-group {
     position: absolute;
-    top: 340px;
+    top: 650px;
     left: -120px;
     z-index: 2;
 }
 .project_3 .text-group .title {
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.project_3 .text-group .description {
+    font-size: 25px;
+    text-align: center;
+    color: #ffd100;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-bottom: 30px;
 }
 
 .project_3 .text-group .btn {
@@ -549,21 +731,6 @@ section .about-self .left .social a {
 
 .project_3 .text-group .material-icons {
     margin-left: 5px; /* 아이콘과 텍스트 사이의 간격을 조절할 수 있습니다 */
-}
-
-.project_3 .text-group .description {
-    font-size: 19px;
-    text-align: center;
-    color: #ffd100;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-.project_3 .product {
-    position: absolute;
-    width: 700px;
-    top: 0;
-    right: 0;
-    z-index: 0;
 }
 
 /*Project 3 - carousel 3*/
@@ -696,7 +863,6 @@ section .about-self .left .social a {
 .project_3 .project3-carousel .swiper-prev:hover,
 .project_3 .project3-carousel .swiper-next:hover {
     background-color: #2774ae;
-    color: #003b5c;
 }
 /*End Project 3 - carousel 3*/
 /*End Project 3*/
@@ -797,7 +963,7 @@ section .about-self .left .social a {
 .notice .personal-carousel {
     /*width: auto;*/
     height: 840px;
-    background-color: #daebfe;
+    background-color: #8bb8e8;
     position: relative;
     overflow: hidden;
     transition: height 0.4s;

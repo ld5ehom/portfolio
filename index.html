@@ -61,9 +61,6 @@
     #project_1{
       display: block;
     }
-    #project_1{
-      display: block;
-    }
     #project_2{
       display: block;
     }
@@ -82,9 +79,6 @@
 
     /* Media query for viewport width <= 768px: show the section */
     @media screen and (max-width: 992px) {
-      #project_1{
-        display: none;
-      }
       #project_1{
         display: none;
       }
@@ -208,7 +202,7 @@
           <br><br><br>
           <h3 style="color:#FFB81C;">
             &nbsp;&nbsp;&nbsp;Skills &nbsp;
-            <i class="fa-brands fa-swift" style="color: #FF5722;"></i>
+            <i class="fa-brands fa-project1" style="color: #FF5722;"></i>
             <hr>
           </h3>
           <p>&nbsp;
@@ -222,7 +216,7 @@
             &nbsp;&nbsp;HTML5, CSS, Python, Java, React, Node.js, Next.js
           </p>
           <p style="text-align: left;">&nbsp;&nbsp;&nbsp; 
-            <!-- <i class="fa-brands fa-swift" style="color: #FF5722;"></i>&nbsp;&nbsp; -->
+            <!-- <i class="fa-brands fa-project1" style="color: #FF5722;"></i>&nbsp;&nbsp; -->
             <!-- <i class="fa-brands fa-java" style="color: #007396;"></i>&nbsp;
             <i class="fa-brands fa-html5" style="color: #E34F26;"></i>&nbsp;
             <i class="fa-brands fa-css3-alt" style="color: #1572B6;"></i>&nbsp;&nbsp;&nbsp;
@@ -236,30 +230,85 @@
   <!-- end About Me -->
 
 
-  <!--Project 1-->
-  
-  <!-- <section id="project_1" class="project_1">
+  <!-- Project 1 career Website-->
+  <section id="project_1" class="project_1 scroll-spy">
     <div class="inner">
+      <img src="./images/career-1.png" alt="main icon" class="logo back-to-position to-right delay-1" />
+      <div class="text-group">
+        <div class="title back-to-position to-left delay-2">
+          Career Website
+        </div>
+        <div class="description back-to-position to-left delay-3">
+          -	Utilized: TypeScript, React, pnpm workspace, Turborepo, Webpack, Vite, SCSS, Recoil
+        </div>
 
-      <div class="title fade-in">
-        <img src="./images/career-1.png" alt="왼쪽 위 메인 이미지" />
-        <a href=" " class="btn btn--swift">Details</a>
+        <div class="more back-to-position to-right delay-2">
+          <div class="toggle-project_1 open"> <!--토글버튼-->
+            <a class="btn">
+              <div class="material-icons" id="project1-carousel-icon">upload</div>
+              Details
+            </a>
+          </div>
+          <a href="https://github.com/ld5ehom/career-web.git" class="btn" target="_blank"> 
+            <i class="fa-brands fa-github"></i> Github 
+          </a> 
+        </div>
       </div>
-      <div class="fade-in">
-        <img src="./images/iphone.jpg" alt="오른쪽 뒤" class="swift1 image" />
-        <img src="./images/project_1_cup1_text.png" alt="오른쪽 위 텍스트" class="swift1 text" />
-      </div>
-      <div class="fade-in">
-        <img src="./images/iphone.jpg" alt="오른쪽 앞" class="swift2 image" />
-        <img src="./images/project_1_cup2_text.png" alt="가운데 텍스트" class="swift2 text" />
-      </div>
-      <div class="fade-in">
-        <img src="./images/swift.png" alt="swift-logo" class="swift-logo" />
+      <div>
+        <img src="./images/career-2.png" alt="" class="product back-to-position to-left delay-2" />
       </div>
     </div>
+
+    <!-- project 1 carousel -->
+    <div class="project1-carousel"> <!--promotion-->
+      <div class="project1-title">
+        <div class="toggle-close_1" id="toggle-close_1"> <!--토글버튼-->
+          <h2>Description 
+            <a class="btn" id="project1-close-icon-1">
+              &nbsp;Close &nbsp;
+              <div class="material-icons">upload</div>
+            </a>  
+          </h2>
+        </div> 
+        <div>
+          <p>- Developed a single repository using Micro Frontend Architecture (MFA) to integrate multiple projects, including user account management, networking, video, job postings, and shared components like a UI-Kit and shell-router.</p>
+          <p>- The Shell acts as the primary host application, with each micro app functioning as a remote module. It manages authentication and leverages React Router to navigate between micro apps based on browser URLs. Webpack Module Federation connects the Shell and micro apps, enabling independent React render lifecycles for each app. This design ensures micro apps operate autonomously while remaining part of a unified system.</p>
+          <p>- Shared logic and components, such as the UI-Kit and Shell-Router, were extracted into standalone packages and integrated into both the Shell and micro apps during the build process. Modules are managed based on package.json configurations, with Build-Time Shared settings preventing duplication. Webpack Module Federation and peerDependencies optimize React library loading, enabling seamless integration of shared functionality while supporting independent micro app development.</p>
+          <p>- Designed two core modules, ui-kit and shell-router. The career-web/ui-kit delivers components for global styling and ensures visual consistency across the application. The career-web/shell-router streamlines interaction between the Shell and micro apps by managing routing and authentication information through hooks, components, and factory functions.</p>
+        </div>
+      
+      </div>
+
+      <div class="swiper-container">
+        
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide">
+            <img src="./images/career-1.png" alt="career-1">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/career-2.png" alt="career-2">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/career-3.png" alt="career-3">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/career-4.png" alt="career-4">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-prev">
+        <span class="material-icons">arrow_back</span>
+      </div>
+      <div class="swiper-next">
+        <span class="material-icons">arrow_forward</span>
+      </div>
+    </div>
+    <!-- End project 1 carousel -->
   </section>
-  -->
   <!-- // End Project 1 -->
+
 
   <!-- Project 2 Marketplace Website-->
   <section id="project_2" class="project_2 scroll-spy">
@@ -341,7 +390,7 @@
           Store Management System
         </div>
         <div class="description back-to-position to-left delay-2">
-          -	Utilized: Java, Spring Boot, REST, Lambda <br> RDS, DynamoDB, S3
+          -	Utilized: Java, Spring Boot, REST, Lambda, RDS, DynamoDB, S3
         </div>
 
         <div class="more back-to-position to-right delay-2">
@@ -495,7 +544,12 @@
         <h4>PROJECTS</h4>
         <h2>Portfolio</h2>
       </div>
-      
+        <div class="portfolio-inner" onclick="redirectToCareer()">
+          <img src="./images/career-1.png" alt="">
+          <h3>&nbsp;Career Website</h3>
+          <strong>&nbsp;&nbsp;TypeScript, React</strong>
+        </div>
+
         <div class="portfolio-inner" onclick="redirectToMarket()">
           <img src="./images/market-0.png" alt="">
           <h3>&nbsp;Marketplace </h3>

@@ -52,6 +52,10 @@ function redirectToTictactoe() {
     window.open("https://ld5ehom.github.io/tic-tac-toe-frontend/", "_blank");
 }
 
+function redirectToCareer() {
+    window.open("https://github.com/ld5ehom/career-web", "_blank");
+}
+
 function redirectToMarket() {
     window.open("https://market-web-rho.vercel.app/", "_blank");
 }
