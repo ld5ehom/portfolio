@@ -254,7 +254,7 @@ section .about-self .left .social a {
     align-items: flex-start; /* 세로 방향으로 위에서 시작 */
 }
 .project_1 .inner {
-    height: 900px;
+    height: 1000px;
 }
 /* Main image */
 .project_1 .logo {
@@ -468,7 +468,7 @@ section .about-self .left .social a {
 
 /* 백그라운드 크기 */
 .project_2 .inner {
-    height: 900px;
+    height: 1000px;
 }
 /* Main image */
 .project_2 .product {
@@ -870,7 +870,7 @@ section .about-self .left .social a {
 /*NOTICE*/
 /*About Me LINE*/
 .notice {
-    background-color: #005587;
+    background-color: #2774ae;
 }
 .notice .notice-line {
     position: relative;
@@ -899,7 +899,7 @@ section .about-self .left .social a {
 .notice .notice-line .inner__left {
     width: 60%;
     height: 100%;
-    background-color: #003b5c;
+    background-color: 2774ae;
     display: flex;
     align-items: center;
 }
