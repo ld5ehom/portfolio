@@ -4,7 +4,7 @@
 
     // main tag h2 <span>
     const spanEl = document.querySelector("main h2 span");
-    const textArray = ["Taewook Park", "Frontend Developer"];
+    const textArray = ["Taewook Park", "Software Developer"];
     let index = 0;
     let currentText = textArray[index].split(""); //text array 문자열 추출
 
