@@ -4,7 +4,7 @@
 
     // main tag h2 <span>
     const spanEl = document.querySelector("main h2 span");
-    const textArray = ["Taewook Park", "Full Stack Developer"];
+    const textArray = ["Taewook Park", "Software Developer"];
     let index = 0;
     let currentText = textArray[index].split(""); //text array 문자열 추출
 
@@ -111,7 +111,7 @@ window.addEventListener(
                 x: 100,
             });
         }
-    }, 300)
+    }, 300),
 );
 // 상단으로 스크롤 버튼을 클릭하면,
 toTopEl.addEventListener("click", function () {
@@ -251,7 +251,7 @@ const project1El = document.querySelector(".project1-carousel");
 // 슬라이드 영역를 토글하는 버튼을 클릭하면 위를 열거나 닫는다!
 const project1ToggleBtn = document.querySelector(".toggle-project_1");
 // 슬라이드 영역 숨김 여부 기본값! 숨김설정 true , 보이고 싶으면 FALSE
-let project1HideCarousel = false;
+let project1HideCarousel = true;
 // 아이콘 요소 검색!
 const project1Icon = document.getElementById("project1-carousel-icon");
 // close 아이콘
@@ -436,7 +436,7 @@ function floatingObject(selector, delay, size) {
             repeat: -1, // 몇 번 반복하는지를 설정, `-1`은 무한 반복.
             yoyo: true, // 한번 재생된 애니메이션을 다시 뒤로 재생.
             ease: Power1.easeInOut, // Easing 함수 적용.
-        }
+        },
     );
 }
 floatingObject(".floating1", 1, 15);

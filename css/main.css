@@ -123,7 +123,7 @@ section .title p {
 
 .about {
     width: 100%;
-    height: 90vh;
+    height: 125 vh;
     background:
         linear-gradient(
             rgba(0, 0, 0, 0.9) /*위*/,
@@ -162,7 +162,7 @@ section .about-self .right {
 
 /* 본문 오른쪽 h3 태그의 글자 크기와 여백 지정 */
 section .about-self .right h3 {
-    font-size: 2.25rem;
+    font-size: 2.2 rem;
     margin-bottom: 0rem;
     color: #fff;
     font-weight: bold; /* 글자를 굵게 처리 */
@@ -182,7 +182,7 @@ section .about-self .right p {
 }
 
 section .about-self .right .p1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 section .about-self .right .p2 {
@@ -255,7 +255,7 @@ section .about-self .left .social a {
     align-items: flex-start; /* 세로 방향으로 위에서 시작 */
 }
 .project_1 .inner {
-    height: 1000px;
+    height: 900px;
 }
 /* Main image */
 .project_1 .logo {
@@ -321,12 +321,12 @@ section .about-self .left .social a {
 /*Project 1 - carousel 1*/
 /*Project 1 아래 전체 박스 */
 .project_1 .project1-carousel {
-    height: 1600px;
+    height: 1750px;
     margin-top: 150px;
     margin-bottom: 10px;
     justify-items: center;
     position: flex;
-    background: #8bb8e8;
+    background: #2774ae;
 }
 
 .project_1 .project1-carousel .project1-title {
@@ -536,7 +536,7 @@ section .about-self .left .social a {
     margin-top: 100px;
     /* margin-bottom: 10px; */
     position: flex;
-    background: #8bb8e8;
+    background: #2774ae;
 }
 .project_2 .project2-carousel .project2-title {
     position: relative;
@@ -741,7 +741,7 @@ section .about-self .left .social a {
     margin-top: 100px;
     margin-bottom: 20px;
     position: flex;
-    background: #8bb8e8;
+    background: #2774ae;
 }
 .project_3 .project3-carousel .project3-title {
     position: relative;
