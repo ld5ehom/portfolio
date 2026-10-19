@@ -3,6 +3,7 @@
  * About page. Static copy, same tree every visit.
  */
 import Image from "next/image";
+import { asset } from "@/lib/base-path";
 import { EXPERIENCE, SKILL_GROUPS } from "@/lib/portfolio-content";
 
 /** Experience, school, and skills. */
@@ -13,7 +14,7 @@ export function AboutBoard() {
         Taewook Park
       </h2>
       <Image
-        src="/portfolio/me.png"
+        src={asset("/portfolio/me.png")}
         alt="Taewook Park"
         width={560}
         height={700}
@@ -60,7 +61,7 @@ export function AboutBoard() {
         <p className="m-0 flex justify-between gap-4 font-[family-name:var(--font-display)] text-[1.45rem] font-semibold text-black">
           <span className="flex min-w-0 items-center gap-2">
             <Image
-              src="/images/ucla-touch.png"
+              src={asset("/images/ucla-touch.png")}
               alt=""
               width={48}
               height={48}

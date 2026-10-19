@@ -2,6 +2,7 @@
  * @see docs/portfolio/liquid-light.md
  * About copy follows the resume. Agent stack follows the ERP agent notes. No fetch.
  */
+import { asset } from "@/lib/base-path";
 
 export const PROFILE_LINKS = {
   linkedin: "https://www.linkedin.com/in/ld5ehom",
@@ -11,7 +12,7 @@ export const PROFILE_LINKS = {
 export const EXPERIENCE = [
   {
     org: "Selectron Industrial Co., Inc.",
-    mark: "/images/selectron.png",
+    mark: asset("/images/selectron.png"),
     when: "February 2026 – Present",
     role: "Procurement Systems Engineer",
     place: "Cerritos, CA",
@@ -24,7 +25,7 @@ export const EXPERIENCE = [
   },
   {
     org: "TechX Labs, Inc.",
-    mark: "/images/techx-favicon.png",
+    mark: asset("/images/techx-favicon.png"),
     when: "June 2025 – February 2026",
     role: "Machine Learning Engineer",
     place: "Boston, MA",
@@ -101,10 +102,10 @@ export const PROJECTS: Project[] = [
     title: "Career Website",
     stack: "TypeScript, React, pnpm workspace, Turborepo, Webpack, Vite, SCSS, Recoil",
     shots: [
-      { src: "/portfolio/career-1.png", width: 1146, height: 1082 },
-      { src: "/portfolio/career-2.png", width: 1159, height: 1012 },
-      { src: "/portfolio/career-3.png", width: 1163, height: 1131 },
-      { src: "/portfolio/career-4.png", width: 1167, height: 990 },
+      { src: asset("/portfolio/career-1.png"), width: 1146, height: 1082 },
+      { src: asset("/portfolio/career-2.png"), width: 1159, height: 1012 },
+      { src: asset("/portfolio/career-3.png"), width: 1163, height: 1131 },
+      { src: asset("/portfolio/career-4.png"), width: 1167, height: 990 },
     ],
     href: "https://github.com/ld5ehom/career-web.git",
     linkLabel: "Github",
@@ -121,9 +122,9 @@ export const PROJECTS: Project[] = [
     title: "Marketplace Website",
     stack: "TypeScript, Next.js, React, Supabase, tailwindCSS, Storybook, Vercel",
     shots: [
-      { src: "/portfolio/market-2.png", width: 1137, height: 1214 },
-      { src: "/portfolio/market-3.png", width: 1154, height: 1150 },
-      { src: "/portfolio/market-4.png", width: 1147, height: 1135 },
+      { src: asset("/portfolio/market-2.png"), width: 1137, height: 1214 },
+      { src: asset("/portfolio/market-3.png"), width: 1154, height: 1150 },
+      { src: asset("/portfolio/market-4.png"), width: 1147, height: 1135 },
     ],
     href: "https://github.com/ld5ehom/market-web.git",
     linkLabel: "Github",
