@@ -1,1 +1,9 @@
-https://ld5ehom.github.io/portfolio/
+# Portfolio
+
+---
+
+## Dev
+
+```bash
+npm run dev
+```

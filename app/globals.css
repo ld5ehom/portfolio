@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Light glass only. The UCLA photo is a layout element, not a wash. */
+html.glass {
+  color-scheme: light !important;
+  font-size: 16px;
+}
+
+@media (min-width: 2560px) {
+  html.glass {
+    font-size: 18px;
+  }
+}
+
+@theme {
+  --animate-board-in: board-in 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-photo-drift: photo-drift 28s ease-in-out infinite alternate;
+}
+
+@keyframes board-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes photo-drift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(-1.2%, -0.8%, 0);
+  }
+}
+
+/* Skill chips copy the ERP idle button liquid rim. Face stays clear. */
+.skill-chip {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid color-mix(in oklab, white 28%, transparent);
+  border-top-color: color-mix(in oklab, white 62%, transparent);
+  border-right-color: color-mix(in oklab, white 32%, transparent);
+  border-bottom-color: color-mix(in oklab, white 18%, transparent);
+  border-left-color: color-mix(in oklab, white 46%, transparent);
+  border-radius: 0.75rem;
+  background: color-mix(in oklab, white 46%, transparent);
+  padding: 0.2rem 0.7rem;
+}
+
+.skill-chip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  padding: 5px;
+  background-image:
+    linear-gradient(180deg, color-mix(in oklab, white 62%, transparent) 0px, color-mix(in oklab, white 22%, transparent) 2px, transparent 5px),
+    linear-gradient(90deg, color-mix(in oklab, white 52%, transparent) 0px, color-mix(in oklab, white 14%, transparent) 1.5px, transparent 4px),
+    linear-gradient(0deg, color-mix(in oklab, white 28%, transparent) 0px, transparent 4px),
+    linear-gradient(270deg, color-mix(in oklab, white 36%, transparent) 0px, transparent 4px);
+  background-origin: border-box;
+  background-clip: border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}

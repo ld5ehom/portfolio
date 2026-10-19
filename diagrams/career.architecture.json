@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Career Website",
+    "output": "career.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/ld5ehom/career-web",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "4593162ebb7d1bab67ed390bd8f09c0058cf4891"
+    },
+    "views": [
+      {
+        "id": "shell",
+        "label": "Shell 로드",
+        "focus": ["visitor", "shell", "remotes"],
+        "note": "Shell이 remoteEntry.js로 Posting, Video, Network, Jobs를 불러온다."
+      },
+      {
+        "id": "shared",
+        "label": "공유 패키지",
+        "focus": ["shell", "uikit", "shellrouter"],
+        "note": "ui-kit과 shell-router는 singleton으로 공유된다."
+      },
+      {
+        "id": "data",
+        "label": "JSON Server",
+        "focus": ["remotes", "jsonserver", "dbjson", "auth0"],
+        "note": "네 앱이 :4000을 호출한다. userinfo가 실패해도 요청은 통과한다."
+      }
+    ]
+  },
+  "layout": {
+    "mode": "grid",
+    "origin": [56, 96],
+    "cols": 5,
+    "gapX": 48,
+    "gapY": 108,
+    "cellW": 176,
+    "cellH": 72
+  },
+  "components": [
+    {
+      "id": "visitor",
+      "type": "external",
+      "label": "브라우저",
+      "sublabel": "사용자",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "uikit",
+      "type": "frontend",
+      "label": "UI-Kit",
+      "sublabel": "packages/ui-kit",
+      "row": 0,
+      "col": 1,
+      "sources": [{ "path": "packages/ui-kit/src/index.ts", "label": "@career-web/ui-kit" }]
+    },
+    {
+      "id": "shell",
+      "type": "frontend",
+      "label": "Shell",
+      "sublabel": ":3000",
+      "brand": "react",
+      "row": 1,
+      "col": 1,
+      "sources": [{ "path": "apps/shell/webpack.config.js", "line": 47, "end_line": 55, "label": "remotes" }]
+    },
+    {
+      "id": "shellrouter",
+      "type": "frontend",
+      "label": "Shell Router",
+      "sublabel": "packages/shell-router",
+      "row": 2,
+      "col": 1,
+      "sources": [{ "path": "packages/shell-router/src/router.ts", "label": "singleton" }]
+    },
+    {
+      "id": "auth0",
+      "type": "security",
+      "label": "Auth0",
+      "sublabel": "Bearer",
+      "row": 0,
+      "col": 2,
+      "sources": [{ "path": "apps/shell/src/router.tsx", "line": 29, "end_line": 31, "label": "Auth0Provider" }]
+    },
+    {
+      "id": "remotes",
+      "type": "frontend",
+      "label": "리모트 앱",
+      "sublabel": ":3001–3004",
+      "row": 1,
+      "col": 2,
+      "sources": [
+        { "path": "apps/posting/src/apis.ts", "label": "Posting /posts" },
+        { "path": "apps/video/src/apis.ts", "label": "Video /courses" },
+        { "path": "apps/jobs/src/apis.ts", "label": "Jobs /jobs" }
+      ]
+    },
+    {
+      "id": "jsonserver",
+      "type": "backend",
+      "label": "JSON Server",
+      "sublabel": ":4000",
+      "brand": "node-js",
+      "row": 1,
+      "col": 3,
+      "sources": [{ "path": "server/index.js", "line": 4, "end_line": 10, "label": "json-server" }]
+    },
+    {
+      "id": "dbjson",
+      "type": "database",
+      "label": "db.json",
+      "sublabel": "server/db.json",
+      "row": 1,
+      "col": 4,
+      "sources": [{ "path": "server/db.json", "label": "router" }]
+    }
+  ],
+  "connections": [
+    { "id": "visit-shell", "from": "visitor", "to": "shell", "label": "HTTPS", "variant": "emphasis" },
+    { "id": "shell-uikit", "from": "shell", "to": "uikit", "label": "singleton" },
+    { "id": "shell-router-pkg", "from": "shell", "to": "shellrouter", "label": "singleton", "labelDy": 24 },
+    { "id": "auth-shell", "from": "auth0", "to": "shell", "label": "Auth0Provider", "variant": "security" },
+    { "id": "shell-remotes", "from": "shell", "to": "remotes", "label": "remoteEntry", "labelDy": 22 },
+    { "id": "remotes-api", "from": "remotes", "to": "jsonserver", "label": "fetch :4000", "labelDy": 22 },
+    { "id": "server-auth", "from": "jsonserver", "to": "auth0", "label": "userinfo", "variant": "security" },
+    { "id": "server-db", "from": "jsonserver", "to": "dbjson", "label": "router" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "호스트",
+      "items": ["Shell :3000이 Module Federation 호스트", "Posting :3001, Video :3002, Network :3003, Jobs :3004"]
+    },
+    {
+      "dot": "violet",
+      "title": "공유",
+      "items": ["@career-web/ui-kit singleton", "@career-web/shell-router singleton"]
+    },
+    {
+      "dot": "emerald",
+      "title": "데이터",
+      "items": ["네 앱이 JSON Server :4000을 호출", "userinfo가 실패해도 isAuthorized는 true"]
+    }
+  ]
+}

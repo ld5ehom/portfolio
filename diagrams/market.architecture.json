@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Marketplace Website",
+    "output": "market.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/ld5ehom/market-web",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "d1a50ef56af52b7a5376447709f9c264f7434a8d"
+    },
+    "views": [
+      {
+        "id": "catalog",
+        "label": "상품 조회",
+        "focus": ["visitor", "pages", "repository", "supabase"],
+        "note": "페이지가 repository를 통해 Supabase products를 읽는다."
+      },
+      {
+        "id": "mock",
+        "label": "목 데이터",
+        "focus": ["repository", "mock"],
+        "note": "USE_MOCK_DATA가 켜지면 mock.ts로 대체한다."
+      }
+    ]
+  },
+  "layout": {
+    "mode": "grid",
+    "origin": [72, 120],
+    "cols": 4,
+    "gapX": 56,
+    "gapY": 120,
+    "cellW": 180,
+    "cellH": 76
+  },
+  "components": [
+    {
+      "id": "visitor",
+      "type": "external",
+      "label": "브라우저",
+      "sublabel": "사용자",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "pages",
+      "type": "frontend",
+      "label": "Next.js",
+      "sublabel": "src/pages",
+      "brand": "next-js",
+      "row": 1,
+      "col": 1,
+      "sources": [{ "path": "src/pages/products/index.tsx", "label": "pages router" }]
+    },
+    {
+      "id": "repository",
+      "type": "backend",
+      "label": "Repository",
+      "sublabel": "src/repository",
+      "row": 1,
+      "col": 2,
+      "sources": [{ "path": "src/repository/products/getProducts.ts", "line": 10, "end_line": 28, "label": "getProducts" }]
+    },
+    {
+      "id": "supabase",
+      "type": "database",
+      "label": "Supabase",
+      "sublabel": "products",
+      "brand": "supabase",
+      "row": 1,
+      "col": 3,
+      "sources": [{ "path": "src/utils/supabase.ts", "line": 1, "end_line": 7, "label": "createClient" }]
+    },
+    {
+      "id": "mock",
+      "type": "backend",
+      "label": "목 데이터",
+      "sublabel": "src/utils/mock.ts",
+      "row": 0,
+      "col": 2,
+      "sources": [{ "path": "src/utils/mock.ts", "label": "USE_MOCK_DATA" }]
+    }
+  ],
+  "connections": [
+    { "id": "visit-pages", "from": "visitor", "to": "pages", "label": "HTTPS", "variant": "emphasis" },
+    { "id": "pages-repo", "from": "pages", "to": "repository", "label": "조회" },
+    { "id": "repo-supabase", "from": "repository", "to": "supabase", "label": "from('products')" },
+    { "id": "repo-mock", "from": "repository", "to": "mock", "label": "USE_MOCK_DATA", "variant": "dashed" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "화면",
+      "items": ["Next.js pages 라우터", "상품, 검색, 메시지, 내 상점"]
+    },
+    {
+      "dot": "emerald",
+      "title": "데이터",
+      "items": ["repository가 Supabase 클라이언트를 받음", "products는 purchase_by가 비어 있는 행"]
+    },
+    {
+      "dot": "amber",
+      "title": "대체",
+      "items": ["USE_MOCK_DATA가 true면 mock.ts", "next.config.js가 그 값을 env로 넘김"]
+    }
+  ]
+}

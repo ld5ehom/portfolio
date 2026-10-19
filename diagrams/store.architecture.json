@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Store Management System",
+    "output": "store.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/ld5ehom/store-backend",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "0c79e259636cd71a0b6df0947ea2a1fffc8a7814"
+    },
+    "views": [
+      {
+        "id": "request",
+        "label": "API 요청",
+        "focus": ["client", "api", "routers", "services", "models", "mysql"],
+        "note": "클라이언트가 FastAPI 라우터와 서비스를 거쳐 MySQL까지 조회한다."
+      },
+      {
+        "id": "recommend",
+        "label": "날씨 추천",
+        "focus": ["services", "kma", "predict"],
+        "note": "좌표와 거리가 있으면 기상청 ASOS 관측으로 scikit-learn 추천을 붙인다."
+      }
+    ]
+  },
+  "layout": {
+    "mode": "grid",
+    "origin": [48, 72],
+    "cols": 6,
+    "gapX": 36,
+    "gapY": 88,
+    "cellW": 168,
+    "cellH": 72
+  },
+  "components": [
+    {
+      "id": "client",
+      "type": "external",
+      "label": "클라이언트",
+      "sublabel": "API 요청",
+      "row": 1,
+      "col": 0,
+      "sources": [{ "path": "README.md", "label": "API Consumer" }]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "FastAPI",
+      "sublabel": "src/app.py",
+      "brand": "fastapi",
+      "row": 1,
+      "col": 1,
+      "sources": [{ "path": "src/app.py", "line": 20, "end_line": 36, "label": "include_router" }]
+    },
+    {
+      "id": "routers",
+      "type": "backend",
+      "label": "라우터",
+      "sublabel": "src/routers",
+      "row": 1,
+      "col": 2,
+      "sources": [{ "path": "src/routers/restaurants_router.py", "label": "/restaurants" }]
+    },
+    {
+      "id": "services",
+      "type": "backend",
+      "label": "서비스",
+      "sublabel": "src/services",
+      "row": 1,
+      "col": 3,
+      "sources": [{ "path": "src/services/restaurant_service.py", "line": 32, "end_line": 72, "label": "get_restaurants" }]
+    },
+    {
+      "id": "models",
+      "type": "backend",
+      "label": "SQLAlchemy",
+      "sublabel": "src/models",
+      "row": 1,
+      "col": 4,
+      "sources": [{ "path": "src/models/restaurant_model.py", "label": "Restaurant" }]
+    },
+    {
+      "id": "mysql",
+      "type": "database",
+      "label": "MySQL",
+      "sublabel": "SQLAlchemy URL",
+      "brand": "mysql",
+      "row": 1,
+      "col": 5,
+      "sources": [{ "path": "src/core/database.py", "line": 10, "end_line": 22, "label": "create_engine" }]
+    },
+    {
+      "id": "kma",
+      "type": "external",
+      "label": "기상청",
+      "sublabel": "data.go.kr",
+      "row": 0,
+      "col": 3,
+      "sources": [{ "path": "src/dependencies/weather.py", "line": 47, "end_line": 93, "label": "ASOS" }]
+    },
+    {
+      "id": "predict",
+      "type": "backend",
+      "label": "추천 모델",
+      "sublabel": "scikit-learn",
+      "row": 0,
+      "col": 4,
+      "sources": [{ "path": "src/dependencies/predict.py", "line": 11, "end_line": 36, "label": "joblib" }]
+    }
+  ],
+  "connections": [
+    { "id": "client-api", "from": "client", "to": "api", "label": "HTTPS", "variant": "emphasis" },
+    { "id": "api-routers", "from": "api", "to": "routers", "label": "include_router" },
+    { "id": "routers-services", "from": "routers", "to": "services" },
+    { "id": "services-models", "from": "services", "to": "models", "label": "Session", "labelDy": 28 },
+    { "id": "models-mysql", "from": "models", "to": "mysql", "label": "SQL" },
+    { "id": "services-kma", "from": "services", "to": "kma", "label": "ASOS" },
+    { "id": "services-predict", "from": "services", "to": "predict", "label": "predict_proba" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "API",
+      "items": ["src/app.py가 도메인 라우터를 include", "식당 조회는 /restaurants"]
+    },
+    {
+      "dot": "emerald",
+      "title": "데이터",
+      "items": ["서비스가 SQLAlchemy Session으로 조회", "엔진 URL은 src/core/database.py"]
+    },
+    {
+      "dot": "amber",
+      "title": "추천",
+      "items": ["좌표와 거리가 있으면 data.go.kr ASOS를 읽음", "scikit-learn 모델이 음식 종류를 예측"]
+    }
+  ]
+}
