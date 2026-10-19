@@ -14,15 +14,15 @@
     "views": [
       {
         "id": "request",
-        "label": "API 요청",
+        "label": "API request",
         "focus": ["client", "api", "routers", "services", "models", "mysql"],
-        "note": "클라이언트가 FastAPI 라우터와 서비스를 거쳐 MySQL까지 조회한다."
+        "note": "The client reads MySQL through the FastAPI routers and services."
       },
       {
         "id": "recommend",
-        "label": "날씨 추천",
+        "label": "Weather pick",
         "focus": ["services", "kma", "predict"],
-        "note": "좌표와 거리가 있으면 기상청 ASOS 관측으로 scikit-learn 추천을 붙인다."
+        "note": "With coordinates and a distance, KMA ASOS observations feed the scikit-learn pick."
       }
     ]
   },
@@ -39,8 +39,8 @@
     {
       "id": "client",
       "type": "external",
-      "label": "클라이언트",
-      "sublabel": "API 요청",
+      "label": "Client",
+      "sublabel": "API request",
       "row": 1,
       "col": 0,
       "sources": [{ "path": "README.md", "label": "API Consumer" }]
@@ -58,7 +58,7 @@
     {
       "id": "routers",
       "type": "backend",
-      "label": "라우터",
+      "label": "Routers",
       "sublabel": "src/routers",
       "row": 1,
       "col": 2,
@@ -67,7 +67,7 @@
     {
       "id": "services",
       "type": "backend",
-      "label": "서비스",
+      "label": "Services",
       "sublabel": "src/services",
       "row": 1,
       "col": 3,
@@ -95,7 +95,7 @@
     {
       "id": "kma",
       "type": "external",
-      "label": "기상청",
+      "label": "KMA",
       "sublabel": "data.go.kr",
       "row": 0,
       "col": 3,
@@ -104,7 +104,7 @@
     {
       "id": "predict",
       "type": "backend",
-      "label": "추천 모델",
+      "label": "Recommender",
       "sublabel": "scikit-learn",
       "row": 0,
       "col": 4,
@@ -124,17 +124,17 @@
     {
       "dot": "cyan",
       "title": "API",
-      "items": ["src/app.py가 도메인 라우터를 include", "식당 조회는 /restaurants"]
+      "items": ["src/app.py includes the domain routers", "Restaurant reads use /restaurants"]
     },
     {
       "dot": "emerald",
-      "title": "데이터",
-      "items": ["서비스가 SQLAlchemy Session으로 조회", "엔진 URL은 src/core/database.py"]
+      "title": "Data",
+      "items": ["Services query through a SQLAlchemy Session", "The engine URL is src/core/database.py"]
     },
     {
       "dot": "amber",
-      "title": "추천",
-      "items": ["좌표와 거리가 있으면 data.go.kr ASOS를 읽음", "scikit-learn 모델이 음식 종류를 예측"]
+      "title": "Pick",
+      "items": ["Coordinates plus distance read data.go.kr ASOS", "The scikit-learn model predicts the food type"]
     }
   ]
 }

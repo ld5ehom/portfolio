@@ -30,7 +30,7 @@ export function ProjectList() {
     <div className="flex flex-col gap-4">
       {PROJECT_GROUPS.map((group) => (
         <section key={group}>
-          <p className="m-0 mb-[0.4rem] text-[0.72rem] font-medium tracking-[0.16em] text-black uppercase">{group}</p>
+          <p className="m-0 mb-[0.4rem] text-[0.72rem] font-bold tracking-[0.16em] text-black uppercase">{group}</p>
           <ul className="m-0 flex list-none flex-col gap-[0.45rem] p-0">
             {PROJECTS.filter((project) => project.group === group).map((project) => {
               const href = `/projects/${project.id}`;

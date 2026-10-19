@@ -14,21 +14,21 @@
     "views": [
       {
         "id": "shell",
-        "label": "Shell 로드",
+        "label": "Shell load",
         "focus": ["visitor", "shell", "remotes"],
-        "note": "Shell이 remoteEntry.js로 Posting, Video, Network, Jobs를 불러온다."
+        "note": "Shell loads Posting, Video, Network, and Jobs through remoteEntry.js."
       },
       {
         "id": "shared",
-        "label": "공유 패키지",
+        "label": "Shared packages",
         "focus": ["shell", "uikit", "shellrouter"],
-        "note": "ui-kit과 shell-router는 singleton으로 공유된다."
+        "note": "ui-kit and shell-router are shared as singletons."
       },
       {
         "id": "data",
         "label": "JSON Server",
         "focus": ["remotes", "jsonserver", "dbjson", "auth0"],
-        "note": "네 앱이 :4000을 호출한다. userinfo가 실패해도 요청은 통과한다."
+        "note": "The four apps call :4000. A failed userinfo still lets the request through."
       }
     ]
   },
@@ -45,8 +45,8 @@
     {
       "id": "visitor",
       "type": "external",
-      "label": "브라우저",
-      "sublabel": "사용자",
+      "label": "Browser",
+      "sublabel": "User",
       "row": 1,
       "col": 0
     },
@@ -90,7 +90,7 @@
     {
       "id": "remotes",
       "type": "frontend",
-      "label": "리모트 앱",
+      "label": "Remote apps",
       "sublabel": ":3001–3004",
       "row": 1,
       "col": 2,
@@ -133,18 +133,18 @@
   "cards": [
     {
       "dot": "cyan",
-      "title": "호스트",
-      "items": ["Shell :3000이 Module Federation 호스트", "Posting :3001, Video :3002, Network :3003, Jobs :3004"]
+      "title": "Host",
+      "items": ["Shell :3000 is the Module Federation host", "Posting :3001, Video :3002, Network :3003, Jobs :3004"]
     },
     {
       "dot": "violet",
-      "title": "공유",
+      "title": "Shared",
       "items": ["@career-web/ui-kit singleton", "@career-web/shell-router singleton"]
     },
     {
       "dot": "emerald",
-      "title": "데이터",
-      "items": ["네 앱이 JSON Server :4000을 호출", "userinfo가 실패해도 isAuthorized는 true"]
+      "title": "Data",
+      "items": ["The four apps call JSON Server :4000", "isAuthorized stays true when userinfo fails"]
     }
   ]
 }

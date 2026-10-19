@@ -22,18 +22,18 @@ export function AboutBoard() {
         className="aspect-[4/5] w-full self-start rounded-[1.4rem] border border-white/70 object-cover object-[center_18%] shadow-[0_12px_28px_rgba(8,20,40,0.18)]"
       />
       <div>
-        <h3 className="mt-0 mb-[0.4rem] border-b border-black/35 pb-1 font-[family-name:var(--font-display)] text-[1.65rem] font-semibold">
+        <h3 className="mt-0 mb-[0.4rem] border-b border-black/35 pb-1 font-[family-name:var(--font-display)] text-[2rem] font-semibold">
           Experience
         </h3>
         {EXPERIENCE.map((job) => (
           <section key={job.when} className="mt-[0.7rem]">
-            <p className="m-0 flex justify-between gap-4 font-[family-name:var(--font-display)] text-[1.45rem] font-semibold text-black">
+            <p className="m-0 flex justify-between gap-4 font-[family-name:var(--font-display)] text-[1.75rem] font-semibold text-black">
               {job.role}
               <span className="font-[family-name:var(--font-sans)] text-[0.9rem] font-medium tracking-[0.03em]">
                 {job.when}
               </span>
             </p>
-            <p className="m-0 flex justify-between gap-4 text-[1.07rem] leading-[1.65] text-black">
+            <p className="m-0 flex justify-between gap-4 text-[1.5rem] leading-[1.65] text-black">
               <span className="flex min-w-0 items-center gap-2">
                 <Image
                   src={job.mark}
@@ -46,7 +46,7 @@ export function AboutBoard() {
               </span>
               <span className="text-[0.9rem] font-medium tracking-[0.03em]">{job.place}</span>
             </p>
-            <ul className="mt-[0.35rem] list-disc pl-[1.1rem] text-[1.07rem] leading-[1.65] text-black">
+            <ul className="mt-[0.35rem] list-disc pl-[1.1rem] text-[1.5rem] leading-[1.65] text-black">
               {job.lines.map((line) => (
                 <li key={line}>{line}</li>
               ))}
@@ -55,10 +55,10 @@ export function AboutBoard() {
         ))}
         </div>
         <div className="md:col-start-2">
-        <h3 className="mt-8 mb-[0.4rem] border-b border-black/35 pb-1 font-[family-name:var(--font-display)] text-[1.65rem] font-semibold">
+        <h3 className="mt-8 mb-[0.4rem] border-b border-black/35 pb-1 font-[family-name:var(--font-display)] text-[2rem] font-semibold">
           Education
         </h3>
-        <p className="m-0 flex justify-between gap-4 font-[family-name:var(--font-display)] text-[1.45rem] font-semibold text-black">
+        <p className="m-0 flex justify-between gap-4 font-[family-name:var(--font-display)] text-[1.75rem] font-semibold text-black">
           <span className="flex min-w-0 items-center gap-2">
             <Image
               src={asset("/images/ucla-touch.png")}
@@ -73,17 +73,17 @@ export function AboutBoard() {
             Graduated September 2025
           </span>
         </p>
-        <p className="m-0 text-[1.07rem] leading-[1.65] text-black">Bachelor of Arts in Computer Science and Linguistics</p>
-        <h3 className="mt-5 mb-[0.4rem] border-b border-black/35 pb-1 font-[family-name:var(--font-display)] text-[1.65rem] font-semibold">
+        <p className="m-0 text-[1.5rem] leading-[1.65] text-black">Bachelor of Arts in Computer Science and Linguistics</p>
+        <h3 className="mt-5 mb-[0.4rem] border-b border-black/35 pb-1 font-[family-name:var(--font-display)] text-[2rem] font-semibold">
           Skills
         </h3>
-        <div className="flex flex-col gap-3">
+        <div className="mb-8 flex flex-col gap-3">
           {SKILL_GROUPS.map((group) => (
             <div key={group.label}>
-              <p className="m-0 mb-[0.35rem] text-[1.07rem] text-black">{group.label}</p>
+              <p className="m-0 mb-[0.35rem] text-[1.5rem] text-black">{group.label}</p>
               <ul className="m-0 flex list-none flex-wrap gap-[0.4rem] p-0">
                 {group.items.map((skill) => (
-                  <li key={skill} className="skill-chip text-[1.07rem] text-black">
+                  <li key={skill} className="skill-chip text-[1.5rem] text-black">
                     <span className="relative z-[2]">{skill}</span>
                   </li>
                 ))}

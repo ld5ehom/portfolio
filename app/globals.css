@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
-/* Light glass only. The UCLA photo is a layout element, not a wash. */
+/* Light glass only. The UCLA photo is a layout element, not a wash.
+   Rem base matches ERP: 12px on a normal screen, 16px from 2560. */
 html.glass {
   color-scheme: light !important;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 @media (min-width: 2560px) {
   html.glass {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -34,6 +35,13 @@ html.glass {
   }
   to {
     transform: scale(1.08) translate3d(-1.2%, -0.8%, 0);
+  }
+}
+
+/* Project list edge. A utility border follows the black type color. */
+@media (min-width: 48rem) {
+  .project-split {
+    border-right: 2px solid #fff;
   }
 }
 

@@ -14,15 +14,15 @@
     "views": [
       {
         "id": "catalog",
-        "label": "상품 조회",
+        "label": "Product read",
         "focus": ["visitor", "pages", "repository", "supabase"],
-        "note": "페이지가 repository를 통해 Supabase products를 읽는다."
+        "note": "Pages read Supabase products through the repository."
       },
       {
         "id": "mock",
-        "label": "목 데이터",
+        "label": "Mock data",
         "focus": ["repository", "mock"],
-        "note": "USE_MOCK_DATA가 켜지면 mock.ts로 대체한다."
+        "note": "When USE_MOCK_DATA is on, mock.ts replaces the query."
       }
     ]
   },
@@ -39,8 +39,8 @@
     {
       "id": "visitor",
       "type": "external",
-      "label": "브라우저",
-      "sublabel": "사용자",
+      "label": "Browser",
+      "sublabel": "User",
       "row": 1,
       "col": 0
     },
@@ -76,7 +76,7 @@
     {
       "id": "mock",
       "type": "backend",
-      "label": "목 데이터",
+      "label": "Mock data",
       "sublabel": "src/utils/mock.ts",
       "row": 0,
       "col": 2,
@@ -85,25 +85,25 @@
   ],
   "connections": [
     { "id": "visit-pages", "from": "visitor", "to": "pages", "label": "HTTPS", "variant": "emphasis" },
-    { "id": "pages-repo", "from": "pages", "to": "repository", "label": "조회" },
+    { "id": "pages-repo", "from": "pages", "to": "repository", "label": "read" },
     { "id": "repo-supabase", "from": "repository", "to": "supabase", "label": "from('products')" },
     { "id": "repo-mock", "from": "repository", "to": "mock", "label": "USE_MOCK_DATA", "variant": "dashed" }
   ],
   "cards": [
     {
       "dot": "cyan",
-      "title": "화면",
-      "items": ["Next.js pages 라우터", "상품, 검색, 메시지, 내 상점"]
+      "title": "Screens",
+      "items": ["Next.js pages router", "Products, search, messages, my store"]
     },
     {
       "dot": "emerald",
-      "title": "데이터",
-      "items": ["repository가 Supabase 클라이언트를 받음", "products는 purchase_by가 비어 있는 행"]
+      "title": "Data",
+      "items": ["The repository receives the Supabase client", "products rows keep purchase_by empty"]
     },
     {
       "dot": "amber",
-      "title": "대체",
-      "items": ["USE_MOCK_DATA가 true면 mock.ts", "next.config.js가 그 값을 env로 넘김"]
+      "title": "Fallback",
+      "items": ["USE_MOCK_DATA true uses mock.ts", "next.config.js passes that value as env"]
     }
   ]
 }

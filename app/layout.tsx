@@ -19,7 +19,7 @@ const display = Cormorant_Garamond({
 const sans = Outfit({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           className="pointer-events-none fixed inset-0 -z-10 animate-photo-drift bg-cover bg-center motion-reduce:animate-none"
           style={{ backgroundImage: `url('${basePath}/glass/ucla.jpg')` }}
         />
-        <div className="box-border grid h-full grid-cols-1 grid-rows-[3.6rem_auto_1fr] gap-4 p-4 md:grid-cols-[13.5rem_1fr] md:grid-rows-[3.6rem_1fr] md:px-[1.1rem]">
+        <div className="box-border grid h-full grid-cols-1 grid-rows-[2.75rem_auto_1fr] gap-4 p-4 md:grid-cols-[16rem_1fr] md:grid-rows-[2.75rem_1fr] md:px-[1.1rem]">
           <header className={`${chromePane} flex items-center justify-end px-[1.2rem] md:col-span-2`}>
             <SocialLinks />
           </header>

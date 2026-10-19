@@ -11,7 +11,7 @@ import type { ProjectShot } from "@/lib/portfolio-content";
 
 const STEP_MS = 4200;
 
-/** One photo at a time, with arrows and dots. */
+/** Center photo, with the previous and next shots peeking on each side. */
 export function ProjectStage({ shots }: { shots: readonly ProjectShot[] }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -38,19 +38,21 @@ export function ProjectStage({ shots }: { shots: readonly ProjectShot[] }) {
     setIndex((current) => (current + dir + count) % count);
   }
 
+  const film = count > 1 ? [shots[count - 1], ...shots, shots[0]] : shots
+  const center = count > 1 ? index + 1 : 0
+
   return (
     <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1.4rem] border-2 border-white bg-white/25 shadow-[0_12px_28px_rgba(8,20,40,0.18)]">
-        <div
-          className="flex h-full transition-transform duration-700 ease-[cubic-bezier(0.22,0.8,0.2,1)] motion-reduce:transition-none"
-          style={{ width: `${count * 100}%`, transform: `translate3d(-${(index * 100) / count}%, 0, 0)` }}
-        >
-          {shots.map((item, i) => (
-            <div key={item.src} className="relative h-full" style={{ width: `${100 / count}%` }}>
-              <Image src={item.src} alt="" fill sizes="48rem" priority={i === 0} className="object-cover" />
-            </div>
-          ))}
-        </div>
+      <div className="relative aspect-[100/68] w-full overflow-hidden">
+        {film.map((item, i) => (
+          <div
+            key={`${i}-${item.src}`}
+            className="absolute top-0 h-full overflow-hidden rounded-[1rem] border-2 border-white shadow-[0_12px_28px_rgba(8,20,40,0.18)] transition-[left,opacity] duration-700 ease-[cubic-bezier(0.22,0.8,0.2,1)] motion-reduce:transition-none"
+            style={{ width: "68%", left: `${16 + (i - center) * 70}%`, opacity: i === center ? 1 : 0.4 }}
+          >
+            <Image src={item.src} alt="" fill sizes="32rem" priority={i === center} className="object-cover" />
+          </div>
+        ))}
         {count > 1 ? (
           <>
             <button
