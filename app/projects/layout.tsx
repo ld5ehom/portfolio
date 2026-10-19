@@ -8,7 +8,7 @@ import { ProjectList } from "@/components/project-list";
 export default function ProjectsLayout({ children }: LayoutProps<"/projects">) {
   return (
     <div className="grid min-h-full grid-cols-1 md:grid-cols-[18rem_1fr]">
-      <div className="md:border-r-2 md:border-black md:pr-4">
+      <div className="md:border-r-2 md:border-white md:pr-4">
         <ProjectList />
       </div>
       <div className="pt-4 md:pt-0 md:pl-4">{children}</div>
