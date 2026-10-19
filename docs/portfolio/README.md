@@ -9,7 +9,7 @@
 | 문서 | 내용 |
 | --- | --- |
 | `next-vercel.md` | Next.js 설치와 Vercel 연결 계획. 연결은 아직 안 함 |
-| `liquid-light.md` | 쓸 라이트 모드 |
+| `liquid-light.md` | 화면 |
 
 데이터베이스는 없다.
 

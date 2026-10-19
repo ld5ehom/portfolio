@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Light glass only. The UCLA photo is a layout element, not a wash.
+/* The UCLA photo is a layout element, not a wash.
    Rem base is 12px on a normal screen, 16px from 2560. */
 html.glass {
   color-scheme: light !important;

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description: "Taewook Park portfolio.",
 };
 
-/** Root frame. Light glass only. */
+/** Root frame. */
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`glass h-full bg-transparent ${display.variable} ${sans.variable}`}>
