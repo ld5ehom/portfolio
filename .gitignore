@@ -48,7 +48,7 @@ Desktop.ini
 # local next caches
 .next-dev/
 
-# this computer only — Cursor rules, Claude rules, ERP notes
+# this computer only — Cursor rules, Claude rules, local notes
 /.cursor/
 /.claude/
 /docs/erp/
