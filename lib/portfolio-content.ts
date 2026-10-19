@@ -1,6 +1,6 @@
 /**
  * @see docs/portfolio/liquid-light.md
- * About copy follows the resume. Agent stack follows the ERP agent notes. No fetch.
+ * About copy follows the resume. No fetch.
  */
 import { asset } from "@/lib/base-path";
 
@@ -17,7 +17,7 @@ export const EXPERIENCE = [
     role: "Procurement Systems Engineer",
     place: "Cerritos, CA",
     lines: [
-      "Architected a full-stack procurement ERP platform using an npm-workspace monorepo (Next.js, FastAPI, PostgreSQL, .NET 8), unifying a fragmented legacy Firebird stack into a single system governing the end-to-end procurement lifecycle.",
+      "Architected a full-stack procurement platform using an npm-workspace monorepo (Next.js, FastAPI, PostgreSQL, .NET 8), unifying a fragmented legacy Firebird stack into a single system governing the end-to-end procurement lifecycle.",
       "Engineered a custom ETL pipeline to normalize legacy Firebird staging tables into a 3NF PostgreSQL schema across base tables and analytical views, establishing a single OLTP write path and removing staging overlays from live views.",
       "Implemented a hybrid .NET 8 WPF/WebView2 client to execute web-restricted Excel and Outlook COM automation, deployed via GitHub Actions CI/CD, Inno Setup, and an automated LAN update feed.",
       "Created Budgetary Lookup as a FastAPI sidecar service that extracts real-time distributor pricing and directly populates quote lines, eliminating secondary datastore overhead while maintaining strict transactional consistency.",

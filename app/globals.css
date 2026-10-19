@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Light glass only. The UCLA photo is a layout element, not a wash.
-   Rem base matches ERP: 12px on a normal screen, 16px from 2560. */
+   Rem base is 12px on a normal screen, 16px from 2560. */
 html.glass {
   color-scheme: light !important;
   font-size: 12px;
@@ -45,7 +45,7 @@ html.glass {
   }
 }
 
-/* Skill chips copy the ERP idle button liquid rim. Face stays clear. */
+/* Skill chips use a liquid rim. Face stays clear. */
 .skill-chip {
   position: relative;
   isolation: isolate;

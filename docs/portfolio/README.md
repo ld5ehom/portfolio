@@ -2,8 +2,6 @@
 
 이 폴더가 이 사이트의 문서 정본이다. Cursor 와 Claude 가 자동으로 읽는 룰은 `.claude/rules` 이다. `.cursor/rules` 는 그 접합이다.
 
-ERP 에서 가져온 보드·선적·재고·인쇄 원문은 `docs/erp` 에 있다. 그 폴더는 주입되지 않는다. 나중에 Projects 와 개념 설명을 쓸 때 거기서 꺼낸다.
-
 ---
 
 ## 이 사이트 문서
@@ -11,7 +9,7 @@ ERP 에서 가져온 보드·선적·재고·인쇄 원문은 `docs/erp` 에 있
 | 문서 | 내용 |
 | --- | --- |
 | `next-vercel.md` | Next.js 설치와 Vercel 연결 계획. 연결은 아직 안 함 |
-| `liquid-light.md` | 쓸 라이트 모드. ERP 리퀴드 라이트만 가져옴 |
+| `liquid-light.md` | 쓸 라이트 모드 |
 
 데이터베이스는 없다.
 
@@ -32,6 +30,6 @@ ERP 에서 가져온 보드·선적·재고·인쇄 원문은 `docs/erp` 에 있
 | 다이얼로그 | `dialog-radix-title-a11y.mdc` · `dialog-scroll-fixed.mdc` · `radix-hydration-dashboard-shell.mdc` |
 | 개발 | `dev-fast-refresh-runtime-error-storm.mdc` · `node-no-experimental-webstorage.mdc` · `error-invariant-vs-validation.mdc` |
 
-셸, 열 폭, 무한 루프의 짧은 정본만 여기 있다. 보드별 원문은 `docs/erp/rules` 의 같은 파일 이름이다.
+셸, 열 폭, 무한 루프의 짧은 정본만 여기 있다.
 
 FHD 와 QHD 를 건드리면 `optimize-review-fhd-qhd-gate.mdc` 를 같은 턴에 본다.
